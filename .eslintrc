@@ -1,0 +1,18 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "prettier",
+    "shortlyster"
+  ],
+  "plugins": [
+    "prettier",
+    "react"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "prettier/prettier": ["error", {
+      "singleQuote": true,
+    }],
+    "arrow-parens": "off"
+  }
+}
