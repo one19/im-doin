@@ -1,6 +1,14 @@
 const firebase = require('firebase');
 require('./config');
 
+/*
+ * THIS IS HERE FOR POSTERITY
+ * In a previous version of the app, the database was much simpler
+ * this file has been left here as an example for how a migration might be done
+ * it doesn't paginate, so it likely wouldn't work well on dbs with many more
+ * elements, but this is a pretty good example of a small migration.
+*/
+
 const {
   API_KEY = 'UNSET API KEY',
   DB_NAME = 'UNSET DB NAME',
@@ -55,7 +63,10 @@ const doTheMigrationNow = async () => {
     return upDs;
   }, {});
 
-  await ref.database().ref().update(updates);
+  await ref
+    .database()
+    .ref()
+    .update(updates);
 
   console.log('Successfully did the migration!');
   process.exit();

@@ -1,6 +1,10 @@
 # Changelog
 
 ## [Unreleased][]
+### Added
+* Atomic db interactions with setting events
+* Year/month/day denormalized data for future better history use
+* An example of a small migration
 
 ## [1.0.1][] - 2017-07-22
 
