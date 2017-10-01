@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-require('./config');
+require('dotenv-safe').load();
 const program = require('commander');
 const { updateStatus } = require('./firebase');
 

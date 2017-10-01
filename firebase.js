@@ -48,7 +48,18 @@ module.exports.updateStatus = async ({ background, message }) => {
 
   const year = new Date().getFullYear();
   const month = new Date().getMonth() + 1;
+  const weekDay = new Date().getDay();
   const day = new Date().getDate();
+
+  const weekDays = [
+    'sunday',
+    'monday',
+    'tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday'
+  ];
 
   const newKey = await pushEmptyElement();
   const allPath = `/im-doin-history/all/${newKey}`;
@@ -57,6 +68,7 @@ module.exports.updateStatus = async ({ background, message }) => {
   const monthNestPath = `/im-doin-history/ym/${year}/${month}/${newKey}`;
   const dayAllPath = `/im-doin-history/d/${newKey}`;
   const dayNestPath = `/im-doin-history/ymd/${year}/${month}/${day}/${newKey}`;
+  const weekDayAllPath = `/im-doin-history/wd/${weekDays[weekDay]}/${newKey}`;
 
   await ref
     .database()
@@ -68,7 +80,8 @@ module.exports.updateStatus = async ({ background, message }) => {
       [monthAllPath]: storedEvent,
       [monthNestPath]: storedEvent,
       [dayAllPath]: storedEvent,
-      [dayNestPath]: storedEvent
+      [dayNestPath]: storedEvent,
+      [weekDayAllPath]: storedEvent
     });
 
   console.log('Done!');

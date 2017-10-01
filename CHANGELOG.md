@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+### Changed
+Denormalized data further to allow more interesting queries for months/days/weeks
 
 ## [1.1.0][] - 2017-09-24
 ### Added
