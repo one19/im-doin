@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+
+## [1.1.1][] - 2017-10-01
 ### Changed
 Denormalized data further to allow more interesting queries for months/days/weeks
 
@@ -18,6 +20,7 @@ Denormalized data further to allow more interesting queries for months/days/week
 * **BASIC** commander commmand line argument parsing
 
 
-[Unreleased]: https://github.com/one19/im-doin/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/one19/im-doin/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/one19/im-doin/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/one19/im-doin/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/one19/im-doin/tree/v1.0.1
