@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+### Hotpatch
+* fixes a broken date update path
 
 ## [1.1.1][] - 2017-10-01
 ### Changed

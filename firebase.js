@@ -66,7 +66,7 @@ module.exports.updateStatus = async ({ background, message }) => {
   const yearAllPath = `/im-doin-history/y/${year}/${newKey}`;
   const monthAllPath = `/im-doin-history/m/${month}/${newKey}`;
   const monthNestPath = `/im-doin-history/ym/${year}/${month}/${newKey}`;
-  const dayAllPath = `/im-doin-history/d/${newKey}`;
+  const dayAllPath = `/im-doin-history/d/${day}/${newKey}`;
   const dayNestPath = `/im-doin-history/ymd/${year}/${month}/${day}/${newKey}`;
   const weekDayAllPath = `/im-doin-history/wd/${weekDays[weekDay]}/${newKey}`;
 
