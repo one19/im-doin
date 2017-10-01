@@ -17,4 +17,3 @@ thing you don't have? A social media presence. Well have I got the tool for you!
 * add tests
 * add coverage
 * add ci testing/coverage/badges
-* Convert firebase package use into basic HTTP requests

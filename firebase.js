@@ -19,9 +19,17 @@ const ref = firebase.initializeApp({
 });
 
 const login = () => ref.auth().signInWithEmailAndPassword(EMAIL, PASSWORD);
-const getCurrent = () => ref.database().ref('/im-doin').once('value');
+const getCurrent = () =>
+  ref
+    .database()
+    .ref('/im-doin')
+    .once('value');
 const pushEmptyElement = () =>
-  ref.database().ref('/im-doin-history').child('all').push().key;
+  ref
+    .database()
+    .ref('/im-doin-history')
+    .child('all')
+    .push().key;
 
 module.exports.updateStatus = async ({ background, message }) => {
   await login();
@@ -45,16 +53,23 @@ module.exports.updateStatus = async ({ background, message }) => {
   const newKey = await pushEmptyElement();
   const allPath = `/im-doin-history/all/${newKey}`;
   const yearAllPath = `/im-doin-history/y/${year}/${newKey}`;
-  const monthAllPath = `/im-doin-history/m/${year}/${month}/${newKey}`;
-  const dayAllPath = `/im-doin-history/d/${year}/${month}/${day}/${newKey}`;
+  const monthAllPath = `/im-doin-history/m/${month}/${newKey}`;
+  const monthNestPath = `/im-doin-history/ym/${year}/${month}/${newKey}`;
+  const dayAllPath = `/im-doin-history/d/${newKey}`;
+  const dayNestPath = `/im-doin-history/ymd/${year}/${month}/${day}/${newKey}`;
 
-  await ref.database().ref().update({
-    '/im-doin': newEvent,
-    [allPath]: storedEvent,
-    [yearAllPath]: storedEvent,
-    [monthAllPath]: storedEvent,
-    [dayAllPath]: storedEvent
-  });
+  await ref
+    .database()
+    .ref()
+    .update({
+      '/im-doin': newEvent,
+      [allPath]: storedEvent,
+      [yearAllPath]: storedEvent,
+      [monthAllPath]: storedEvent,
+      [monthNestPath]: storedEvent,
+      [dayAllPath]: storedEvent,
+      [dayNestPath]: storedEvent
+    });
 
   console.log('Done!');
   process.exit();
