@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+
+## [1.2.0][] - 2017-10-15
 ### Added
 * rough feature to create the config information
 * argumentless `im-doin` launches your website
@@ -30,7 +32,8 @@ Denormalized data further to allow more interesting queries for months/days/week
 * **BASIC** commander commmand line argument parsing
 
 
-[Unreleased]: https://github.com/one19/im-doin/compare/v1.1.2...HEAD
+[Unreleased]: https://github.com/one19/im-doin/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/one19/im-doin/compare/v1.1.2...v1.2.0
 [1.1.2]: https://github.com/one19/im-doin/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/one19/im-doin/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/one19/im-doin/compare/v1.0.1...v1.1.0
