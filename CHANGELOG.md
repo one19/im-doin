@@ -1,6 +1,12 @@
 # Changelog
 
 ## [Unreleased][]
+### Added
+* rough feature to create the config information
+* argumentless `im-doin` launches your website
+
+### Changed
+* moved dotenv loading/checking to where it was necessary
 
 ## [1.1.2][] - 2017-10-01
 ### Hotpatch

@@ -1,11 +1,14 @@
+const opn = require('opn');
 const firebase = require('firebase');
+require('dotenv').load({ path: `${__dirname}/.env` });
 
 const {
   API_KEY = 'UNSET API KEY',
   DB_NAME = 'UNSET DB NAME',
   SENDER_ID = 'UNSET SENDER ID',
   EMAIL = 'test@example.com',
-  PASSWORD = 'not-a-password'
+  PASSWORD = 'not-a-password',
+  WEBSITE = 'www.google.com'
 } = process.env;
 
 // Initialize Firebase
@@ -32,6 +35,10 @@ const pushEmptyElement = () =>
     .push().key;
 
 module.exports.updateStatus = async ({ background, message }) => {
+  if (!message && !background) {
+    opn(WEBSITE);
+    return process.exit();
+  }
   await login();
 
   const newEvent = {
@@ -85,5 +92,5 @@ module.exports.updateStatus = async ({ background, message }) => {
     });
 
   console.log('Done!');
-  process.exit();
+  return process.exit();
 };
