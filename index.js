@@ -1,11 +1,17 @@
 #!/usr/bin/env node
-require('dotenv-safe').load();
+const fs = require('fs');
 const program = require('commander');
-const { updateStatus } = require('./firebase');
+const { updateConfig } = require('./config');
 
-program
-  .option('-m  --message <string>', 'status message')
-  .option('-b, --background [string]', '#color/img-url/preset-svg')
-  .parse(process.argv);
+const hasConfig = fs.readdirSync(__dirname).includes('.env');
+if (!hasConfig) {
+  updateConfig();
+} else {
+  const { updateStatus } = require('./firebase'); // eslint-disable-line global-require
+  program
+    .option('-m, --message [string]', 'status message')
+    .option('-b, --background [string]', '#color/img-url/preset-svg')
+    .parse(process.argv);
 
-updateStatus(program);
+  updateStatus(program);
+}
