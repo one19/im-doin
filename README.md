@@ -8,7 +8,6 @@ thing you don't have? A social media presence. Well have I got the tool for you!
 
 
 ### Todo
-* **VITAL:** add first-interaction env var grabbing command line interaction
 * lots of readme
 * more readme
 * enough readme to make it **dead simple**
