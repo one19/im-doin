@@ -9,7 +9,7 @@ const hasEnvsSet =
 
 const hasConfig = fs.readdirSync(__dirname).includes('.env');
 
-if (!hasConfig || !hasEnvsSet) {
+if (!hasConfig && !hasEnvsSet) {
   updateConfig();
 } else {
   const { updateStatus } = require('./firebase'); // eslint-disable-line global-require

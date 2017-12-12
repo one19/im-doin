@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+* patches env conditional error
 
 ## [1.2.1][] - 2017-12-13
 * allowed for .env-less execution with env vars
