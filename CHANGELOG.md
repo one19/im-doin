@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+* allowed for .env-less execution with env vars
 
 ## [1.2.0][] - 2017-10-15
 ### Added
