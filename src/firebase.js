@@ -11,23 +11,22 @@ const {
   WEBSITE = 'www.google.com'
 } = process.env;
 
-// Initialize Firebase
-const ref = firebase.initializeApp({
-  apiKey: API_KEY,
-  authDomain: `${DB_NAME}.firebaseapp.com`,
-  databaseURL: `https://${DB_NAME}.firebaseio.com`,
-  projectId: `${DB_NAME}`,
-  storageBucket: `${DB_NAME}.appspot.com`,
-  messagingSenderId: SENDER_ID
-});
-
-const login = () => ref.auth().signInWithEmailAndPassword(EMAIL, PASSWORD);
-const getCurrent = () =>
+const initDb = async () =>
+  await firebase.initializeApp({
+    apiKey: API_KEY,
+    authDomain: `${DB_NAME}.firebaseapp.com`,
+    databaseURL: `https://${DB_NAME}.firebaseio.com`,
+    projectId: `${DB_NAME}`,
+    storageBucket: `${DB_NAME}.appspot.com`,
+    messagingSenderId: SENDER_ID
+  });
+const login = ref => ref.auth().signInWithEmailAndPassword(EMAIL, PASSWORD);
+const getCurrent = ref =>
   ref
     .database()
     .ref('/im-doin')
     .once('value');
-const pushEmptyElement = () =>
+const pushEmptyElement = ref =>
   ref
     .database()
     .ref('/im-doin-history')
@@ -35,11 +34,12 @@ const pushEmptyElement = () =>
     .push().key;
 
 module.exports.updateStatus = async ({ background, message }) => {
+  const ref = await initDb();
   if (!message && !background) {
     opn(WEBSITE);
     return process.exit();
   }
-  await login();
+  await login(ref);
 
   const newEvent = {
     message,
@@ -47,7 +47,7 @@ module.exports.updateStatus = async ({ background, message }) => {
     startTime: new Date().toString()
   };
 
-  const currentStatusObj = await getCurrent();
+  const currentStatusObj = await getCurrent(ref);
   const current = currentStatusObj.val();
   const storedEvent = Object.assign({}, current, {
     endTime: new Date().toString()
@@ -68,7 +68,7 @@ module.exports.updateStatus = async ({ background, message }) => {
     'saturday'
   ];
 
-  const newKey = await pushEmptyElement();
+  const newKey = await pushEmptyElement(ref);
   const allPath = `/im-doin-history/all/${newKey}`;
   const yearAllPath = `/im-doin-history/y/${year}/${newKey}`;
   const monthAllPath = `/im-doin-history/m/${month}/${newKey}`;

@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+* Transpile down to pre-async node 6.11.5 on commit
+* Use transpiled version on npm
 
 ## [1.2.2][] - 2017-12-13
 * patches env conditional error

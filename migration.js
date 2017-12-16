@@ -1,5 +1,5 @@
 const firebase = require('firebase');
-require('./config');
+require('./src/config');
 
 /*
  * THIS IS HERE FOR POSTERITY
