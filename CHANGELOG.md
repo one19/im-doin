@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+* Default export the updateStatus function.
 
 ## [1.3.0][] - 2017-12-16
 * Transpile down to pre-async node 6.11.5 on commit
