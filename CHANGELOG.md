@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+* Patch module directory & export
+* Added just a little readme
 
 ## [1.3.1][] - 2017-12-16
 * Default export the updateStatus function.

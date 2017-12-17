@@ -1,17 +1,12 @@
 #!/usr/bin/env node
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
 const fs = require('fs');
 const program = require('commander');
 const { updateConfig } = require('./config');
 const { updateStatus } = require('./firebase');
 
-exports.default = updateStatus;
-
+module.exports = updateStatus;
 
 const { API_KEY, DB_NAME, SENDER_ID, EMAIL, PASSWORD, WEBSITE } = process.env;
 const hasEnvsSet = API_KEY && DB_NAME && SENDER_ID && EMAIL && PASSWORD && WEBSITE;
