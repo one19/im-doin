@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+* Added option to pass envs in manually in module extension.
 
 ## [1.3.2][] - 2017-12-17
 * Patch module directory & export

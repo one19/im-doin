@@ -2,7 +2,7 @@
   "name": "im-doin",
   "version": "1.3.2",
   "description": "command-line module for interacting with an im-doin site",
-  "main": "dist/index.js",
+  "main": "dist/firebase.js",
   "repository": "git@github.com:one19/im-doin.git",
   "scripts": {
     "build": "babel src --out-dir dist",
@@ -40,6 +40,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
     "changelog-verify": "^1.0.4",

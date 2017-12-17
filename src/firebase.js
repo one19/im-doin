@@ -11,16 +11,20 @@ const {
   WEBSITE = 'www.google.com'
 } = process.env;
 
-const initDb = async () =>
+const initDb = async envs =>
   await firebase.initializeApp({
     apiKey: API_KEY,
     authDomain: `${DB_NAME}.firebaseapp.com`,
     databaseURL: `https://${DB_NAME}.firebaseio.com`,
     projectId: `${DB_NAME}`,
     storageBucket: `${DB_NAME}.appspot.com`,
-    messagingSenderId: SENDER_ID
+    messagingSenderId: SENDER_ID,
+    ...envs
   });
-const login = ref => ref.auth().signInWithEmailAndPassword(EMAIL, PASSWORD);
+const login = (ref, envs) =>
+  ref
+    .auth()
+    .signInWithEmailAndPassword(EMAIL || envs.email, PASSWORD || envs.password);
 const getCurrent = ref =>
   ref
     .database()
@@ -33,13 +37,13 @@ const pushEmptyElement = ref =>
     .child('all')
     .push().key;
 
-module.exports.updateStatus = async ({ background, message }) => {
-  const ref = await initDb();
+module.exports.updateStatus = async ({ background, message }, envs) => {
+  const ref = await initDb(envs);
   if (!message && !background) {
     opn(WEBSITE);
     return process.exit();
   }
-  await login(ref);
+  await login(ref, envs);
 
   const newEvent = {
     message,

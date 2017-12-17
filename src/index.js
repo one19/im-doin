@@ -4,8 +4,6 @@ const program = require('commander');
 const { updateConfig } = require('./config');
 const { updateStatus } = require('./firebase');
 
-module.exports = updateStatus;
-
 const { API_KEY, DB_NAME, SENDER_ID, EMAIL, PASSWORD, WEBSITE } = process.env;
 const hasEnvsSet =
   API_KEY && DB_NAME && SENDER_ID && EMAIL && PASSWORD && WEBSITE;
