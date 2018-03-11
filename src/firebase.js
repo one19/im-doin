@@ -37,7 +37,7 @@ const pushEmptyElement = ref =>
     .child('all')
     .push().key;
 
-module.exports.updateStatus = async ({ background, message }, envs) => {
+module.exports.updateStatus = async ({ background, message, text }, envs) => {
   const ref = await initDb(envs);
   if (!message && !background) {
     opn(WEBSITE);
@@ -50,6 +50,7 @@ module.exports.updateStatus = async ({ background, message }, envs) => {
     background,
     startTime: new Date().toString()
   };
+  if (text) newEvent.textColor = text;
 
   const currentStatusObj = await getCurrent(ref);
   const current = currentStatusObj.val();

@@ -16,6 +16,10 @@ if (!hasConfig && !hasEnvsSet) {
   program
     .option('-m, --message [string]', 'status message')
     .option('-b, --background [string]', '#color/img-url/preset-svg')
+    .option(
+      '-t, --text [string]',
+      '"simple", other string, or unset for default black/white/bordered'
+    )
     .parse(process.argv);
 
   updateStatus(program);

@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+* npmignore the .env file to persist through updates
+* let the user pass through a text string option for 🌈s
 
 ## [1.3.3][] - 2017-12-17
 * Added option to pass envs in manually in module extension.
