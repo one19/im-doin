@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+
+## [1.4.4][] - 2018-04-04
 * the last??? micropatch for a while around env var parsing?
 
 ## [1.4.3][] - 2018-04-04
@@ -66,7 +68,8 @@ Denormalized data further to allow more interesting queries for months/days/week
 * **BASIC** commander commmand line argument parsing
 
 
-[Unreleased]: https://github.com/one19/im-doin/compare/v1.4.3...HEAD
+[Unreleased]: https://github.com/one19/im-doin/compare/v1.4.4...HEAD
+[1.4.4]: https://github.com/one19/im-doin/compare/v1.4.3...v1.4.4
 [1.4.3]: https://github.com/one19/im-doin/compare/v1.4.2...v1.4.3
 [1.4.2]: https://github.com/one19/im-doin/compare/v1.4.1...v1.4.2
 [1.4.1]: https://github.com/one19/im-doin/compare/v1.4.0...v1.4.1
