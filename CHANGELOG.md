@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+* actually fix that bug, by storing config in `~/.imdoinrc`
 
 ## [1.4.1][] - 2018-04-04
 * finally fix the bug where `process.exit()` had to be used to close connection

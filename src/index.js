@@ -8,7 +8,10 @@ const { API_KEY, DB_NAME, SENDER_ID, EMAIL, PASSWORD, WEBSITE } = process.env;
 const hasEnvsSet =
   API_KEY && DB_NAME && SENDER_ID && EMAIL && PASSWORD && WEBSITE;
 
-const hasConfig = fs.readdirSync(__dirname).includes('.env');
+// because npm won't leave well enough alone our local configs on update
+const hasRootConfig = fs.readdirSync('~').includes('.imdoinrc');
+const hasLocalConfig = fs.readdirSync(__dirname).includes('.env');
+const hasConfig = hasRootConfig || hasLocalConfig;
 
 if (!hasConfig && !hasEnvsSet) {
   updateConfig();

@@ -35,6 +35,7 @@ module.exports.updateConfig = async () => {
       .join('\n');
 
     fs.writeFileSync(`${__dirname}/.env`, envContents);
+    fs.writeFileSync(`~/.imdoinrc`, envContents);
     console.log('Updated config information!');
   });
 };
