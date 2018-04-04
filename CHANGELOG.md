@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+* patch bug around accessing homedir
 
 ## [1.4.2][] - 2018-04-04
 * actually fix that bug, by storing config in `~/.imdoinrc`

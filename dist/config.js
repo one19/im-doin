@@ -3,6 +3,7 @@
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 const fs = require('fs');
+const os = require('os');
 const prompt = require('prompt');
 
 const schema = {
@@ -39,7 +40,7 @@ module.exports.updateConfig = _asyncToGenerator(function* () {
     }).join('\n');
 
     fs.writeFileSync(`${__dirname}/.env`, envContents);
-    fs.writeFileSync(`~/.imdoinrc`, envContents);
+    fs.writeFileSync(`${os.homedir()}/.imdoinrc`, envContents);
     console.log('Updated config information!');
   });
 });

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const os = require('os');
 const prompt = require('prompt');
 
 const schema = {
@@ -35,7 +36,7 @@ module.exports.updateConfig = async () => {
       .join('\n');
 
     fs.writeFileSync(`${__dirname}/.env`, envContents);
-    fs.writeFileSync(`~/.imdoinrc`, envContents);
+    fs.writeFileSync(`${os.homedir()}/.imdoinrc`, envContents);
     console.log('Updated config information!');
   });
 };

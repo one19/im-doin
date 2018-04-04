@@ -2,6 +2,7 @@
 'use strict';
 
 const fs = require('fs');
+const os = require('os');
 const program = require('commander');
 const { updateConfig } = require('./config');
 const { updateStatus } = require('./firebase');
@@ -10,7 +11,7 @@ const { API_KEY, DB_NAME, SENDER_ID, EMAIL, PASSWORD, WEBSITE } = process.env;
 const hasEnvsSet = API_KEY && DB_NAME && SENDER_ID && EMAIL && PASSWORD && WEBSITE;
 
 // because npm won't leave well enough alone our local configs on update
-const hasRootConfig = fs.readdirSync('~').includes('.imdoinrc');
+const hasRootConfig = fs.readdirSync(os.homedir()).includes('.imdoinrc');
 const hasLocalConfig = fs.readdirSync(__dirname).includes('.env');
 const hasConfig = hasRootConfig || hasLocalConfig;
 
