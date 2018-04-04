@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+
+## [1.4.1][] - 2018-04-04
 * finally fix the bug where `process.exit()` had to be used to close connection
 
 ## [1.4.0][] - 2018-03-11
@@ -57,7 +59,8 @@ Denormalized data further to allow more interesting queries for months/days/week
 * **BASIC** commander commmand line argument parsing
 
 
-[Unreleased]: https://github.com/one19/im-doin/compare/v1.4.0...HEAD
+[Unreleased]: https://github.com/one19/im-doin/compare/v1.4.1...HEAD
+[1.4.1]: https://github.com/one19/im-doin/compare/v1.4.0...v1.4.1
 [1.4.0]: https://github.com/one19/im-doin/compare/v1.3.3...v1.4.0
 [1.3.3]: https://github.com/one19/im-doin/compare/v1.3.2...v1.3.3
 [1.3.2]: https://github.com/one19/im-doin/compare/v1.3.1...v1.3.2
