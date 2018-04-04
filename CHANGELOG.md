@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+* the last??? micropatch for a while around env var parsing?
 
 ## [1.4.3][] - 2018-04-04
 * patch bug around accessing homedir

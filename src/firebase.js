@@ -1,6 +1,10 @@
+const os = require('os');
 const opn = require('opn');
 const firebase = require('firebase');
-require('dotenv').load({ path: `${__dirname}/.env` });
+const dotenv = require('dotenv');
+
+dotenv.load({ path: `${os.homedir()}/.imdoinrc` });
+dotenv.load({ path: `${__dirname}/.env` });
 
 const {
   API_KEY = 'UNSET API KEY',

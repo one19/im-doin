@@ -4,9 +4,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
+const os = require('os');
 const opn = require('opn');
 const firebase = require('firebase');
-require('dotenv').load({ path: `${__dirname}/.env` });
+const dotenv = require('dotenv');
+
+dotenv.load({ path: `${os.homedir()}/.imdoinrc` });
+dotenv.load({ path: `${__dirname}/.env` });
 
 const {
   API_KEY = 'UNSET API KEY',
