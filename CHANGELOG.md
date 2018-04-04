@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+* finally fix the bug where `process.exit()` had to be used to close connection
 
 ## [1.4.0][] - 2018-03-11
 * npmignore the .env file to persist through updates

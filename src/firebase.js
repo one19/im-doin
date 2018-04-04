@@ -21,6 +21,7 @@ const initDb = async envs =>
     messagingSenderId: SENDER_ID,
     ...envs
   });
+
 const login = (ref, envs) =>
   ref
     .auth()
@@ -97,5 +98,5 @@ module.exports.updateStatus = async ({ background, message, text }, envs) => {
     });
 
   console.log('Done!');
-  return process.exit();
+  return ref.database().goOffline();
 };
