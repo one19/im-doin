@@ -1,6 +1,6 @@
 {
   "name": "im-doin",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "command-line module for interacting with an im-doin site",
   "main": "dist/firebase.js",
   "repository": "git@github.com:one19/im-doin.git",
