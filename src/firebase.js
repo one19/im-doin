@@ -42,7 +42,11 @@ const pushEmptyElement = ref =>
     .child('all')
     .push().key;
 
-module.exports.updateStatus = async ({ background, message, text }, envs) => {
+module.exports.updateStatus = async (
+  { background, message, text },
+  envs,
+  callback = () => process.exit(0)
+) => {
   const ref = await initDb(envs);
   if (!message && !background) {
     opn(WEBSITE);
@@ -78,29 +82,32 @@ module.exports.updateStatus = async ({ background, message, text }, envs) => {
     'saturday'
   ];
 
-  const newKey = await pushEmptyElement(ref);
-  const allPath = `/im-doin-history/all/${newKey}`;
-  const yearAllPath = `/im-doin-history/y/${year}/${newKey}`;
-  const monthAllPath = `/im-doin-history/m/${month}/${newKey}`;
-  const monthNestPath = `/im-doin-history/ym/${year}/${month}/${newKey}`;
-  const dayAllPath = `/im-doin-history/d/${day}/${newKey}`;
-  const dayNestPath = `/im-doin-history/ymd/${year}/${month}/${day}/${newKey}`;
-  const weekDayAllPath = `/im-doin-history/wd/${weekDays[weekDay]}/${newKey}`;
+  try {
+    const newKey = await pushEmptyElement(ref);
+    const allPath = `/im-doin-history/all/${newKey}`;
+    const yearAllPath = `/im-doin-history/y/${year}/${newKey}`;
+    const monthAllPath = `/im-doin-history/m/${month}/${newKey}`;
+    const monthNestPath = `/im-doin-history/ym/${year}/${month}/${newKey}`;
+    const dayAllPath = `/im-doin-history/d/${day}/${newKey}`;
+    const dayNestPath = `/im-doin-history/ymd/${year}/${month}/${day}/${newKey}`;
+    const weekDayAllPath = `/im-doin-history/wd/${weekDays[weekDay]}/${newKey}`;
 
-  await ref
-    .database()
-    .ref()
-    .update({
-      '/im-doin': newEvent,
-      [allPath]: storedEvent,
-      [yearAllPath]: storedEvent,
-      [monthAllPath]: storedEvent,
-      [monthNestPath]: storedEvent,
-      [dayAllPath]: storedEvent,
-      [dayNestPath]: storedEvent,
-      [weekDayAllPath]: storedEvent
-    });
+    await ref
+      .database()
+      .ref()
+      .update({
+        '/im-doin': newEvent,
+        [allPath]: storedEvent,
+        [yearAllPath]: storedEvent,
+        [monthAllPath]: storedEvent,
+        [monthNestPath]: storedEvent,
+        [dayAllPath]: storedEvent,
+        [dayNestPath]: storedEvent,
+        [weekDayAllPath]: storedEvent
+      });
+  } catch (err) {
+    return callback(err);
+  }
 
-  console.log('Done!');
-  return ref.database().goOffline();
+  return callback();
 };

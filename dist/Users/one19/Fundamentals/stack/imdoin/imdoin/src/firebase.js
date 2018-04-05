@@ -43,7 +43,9 @@ const getCurrent = ref => ref.database().ref('/im-doin').once('value');
 const pushEmptyElement = ref => ref.database().ref('/im-doin-history').child('all').push().key;
 
 module.exports.updateStatus = (() => {
-  var _ref2 = _asyncToGenerator(function* ({ background, message, text }, envs) {
+  var _ref2 = _asyncToGenerator(function* ({ background, message, text }, envs, callback = function () {
+    return process.exit(0);
+  }) {
     const ref = yield initDb(envs);
     if (!message && !background) {
       opn(WEBSITE);
@@ -71,28 +73,31 @@ module.exports.updateStatus = (() => {
 
     const weekDays = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
-    const newKey = yield pushEmptyElement(ref);
-    const allPath = `/im-doin-history/all/${newKey}`;
-    const yearAllPath = `/im-doin-history/y/${year}/${newKey}`;
-    const monthAllPath = `/im-doin-history/m/${month}/${newKey}`;
-    const monthNestPath = `/im-doin-history/ym/${year}/${month}/${newKey}`;
-    const dayAllPath = `/im-doin-history/d/${day}/${newKey}`;
-    const dayNestPath = `/im-doin-history/ymd/${year}/${month}/${day}/${newKey}`;
-    const weekDayAllPath = `/im-doin-history/wd/${weekDays[weekDay]}/${newKey}`;
+    try {
+      const newKey = yield pushEmptyElement(ref);
+      const allPath = `/im-doin-history/all/${newKey}`;
+      const yearAllPath = `/im-doin-history/y/${year}/${newKey}`;
+      const monthAllPath = `/im-doin-history/m/${month}/${newKey}`;
+      const monthNestPath = `/im-doin-history/ym/${year}/${month}/${newKey}`;
+      const dayAllPath = `/im-doin-history/d/${day}/${newKey}`;
+      const dayNestPath = `/im-doin-history/ymd/${year}/${month}/${day}/${newKey}`;
+      const weekDayAllPath = `/im-doin-history/wd/${weekDays[weekDay]}/${newKey}`;
 
-    yield ref.database().ref().update({
-      '/im-doin': newEvent,
-      [allPath]: storedEvent,
-      [yearAllPath]: storedEvent,
-      [monthAllPath]: storedEvent,
-      [monthNestPath]: storedEvent,
-      [dayAllPath]: storedEvent,
-      [dayNestPath]: storedEvent,
-      [weekDayAllPath]: storedEvent
-    });
+      yield ref.database().ref().update({
+        '/im-doin': newEvent,
+        [allPath]: storedEvent,
+        [yearAllPath]: storedEvent,
+        [monthAllPath]: storedEvent,
+        [monthNestPath]: storedEvent,
+        [dayAllPath]: storedEvent,
+        [dayNestPath]: storedEvent,
+        [weekDayAllPath]: storedEvent
+      });
+    } catch (err) {
+      return callback(err);
+    }
 
-    console.log('Done!');
-    return ref.database().goOffline();
+    return callback();
   });
 
   return function (_x2, _x3) {

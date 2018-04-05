@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+* switch implicit process exit for callback notation
 
 ## [1.4.4][] - 2018-04-04
 * the last??? micropatch for a while around env var parsing?

@@ -18,7 +18,6 @@ Also, firing off a solitary `im-doin` will open your website (:
 * lots of readme
 * more readme
 * enough readme to make it **dead simple**
-* handle exceptions gracefully
 * add tests
 * add coverage
 * add ci testing/coverage/badges
