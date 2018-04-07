@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+* Patch out terrible Users dist issue.
 
 ## [1.4.5][] - 2018-04-05
 * switch implicit process exit for callback notation
