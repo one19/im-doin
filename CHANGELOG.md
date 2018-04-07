@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+
+## [1.4.6][] - 2018-04-07
 * Patch out terrible Users dist issue.
 
 ## [1.4.5][] - 2018-04-05
@@ -72,7 +74,8 @@ Denormalized data further to allow more interesting queries for months/days/week
 * **BASIC** commander commmand line argument parsing
 
 
-[Unreleased]: https://github.com/one19/im-doin/compare/v1.4.5...HEAD
+[Unreleased]: https://github.com/one19/im-doin/compare/v1.4.6...HEAD
+[1.4.6]: https://github.com/one19/im-doin/compare/v1.4.5...v1.4.6
 [1.4.5]: https://github.com/one19/im-doin/compare/v1.4.4...v1.4.5
 [1.4.4]: https://github.com/one19/im-doin/compare/v1.4.3...v1.4.4
 [1.4.3]: https://github.com/one19/im-doin/compare/v1.4.2...v1.4.3
