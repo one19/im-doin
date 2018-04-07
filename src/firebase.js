@@ -26,10 +26,10 @@ const initDb = async envs =>
     ...envs
   });
 
-const login = (ref, envs) =>
+const login = (ref, envs = {}) =>
   ref
     .auth()
-    .signInWithEmailAndPassword(EMAIL || envs.email, PASSWORD || envs.password);
+    .signInWithEmailAndPassword(envs.email || EMAIL, envs.password || PASSWORD);
 const getCurrent = ref =>
   ref
     .database()
@@ -52,7 +52,12 @@ module.exports.updateStatus = async (
     opn(WEBSITE);
     return process.exit();
   }
-  await login(ref, envs);
+  try {
+    await login(ref, envs);
+  } catch (authError) {
+    console.log(`Username:${envs.email || EMAIL}, or password incorrect.`);
+    throw authError;
+  }
 
   const newEvent = {
     message,

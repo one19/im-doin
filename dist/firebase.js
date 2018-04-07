@@ -38,7 +38,7 @@ const initDb = (() => {
   };
 })();
 
-const login = (ref, envs) => ref.auth().signInWithEmailAndPassword(EMAIL || envs.email, PASSWORD || envs.password);
+const login = (ref, envs = {}) => ref.auth().signInWithEmailAndPassword(envs.email || EMAIL, envs.password || PASSWORD);
 const getCurrent = ref => ref.database().ref('/im-doin').once('value');
 const pushEmptyElement = ref => ref.database().ref('/im-doin-history').child('all').push().key;
 
@@ -51,7 +51,12 @@ module.exports.updateStatus = (() => {
       opn(WEBSITE);
       return process.exit();
     }
-    yield login(ref, envs);
+    try {
+      yield login(ref, envs);
+    } catch (authError) {
+      console.log(`Username:${envs.email || EMAIL}, or password incorrect.`);
+      throw authError;
+    }
 
     const newEvent = {
       message,

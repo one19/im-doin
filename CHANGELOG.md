@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+* Reverse env priority in auth call.
 
 ## [1.4.7][] - 2018-04-07
 * Give up on actually fixing psychotic dupicate root pathing issue.
