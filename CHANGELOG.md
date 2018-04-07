@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+* Give up on actually fixing psychotic dupicate root pathing issue.
 
 ## [1.4.6][] - 2018-04-07
 * Patch out terrible Users dist issue.

@@ -96,6 +96,7 @@ module.exports.updateStatus = (() => {
     } catch (err) {
       return callback(err);
     }
+    console.log('Done!');
 
     return callback();
   });

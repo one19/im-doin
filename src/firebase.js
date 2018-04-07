@@ -108,6 +108,7 @@ module.exports.updateStatus = async (
   } catch (err) {
     return callback(err);
   }
+  console.log('Done!');
 
   return callback();
 };
