@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+
+## [1.5.0][] - 2018-04-07
 * Reverse env priority in auth call.
 
 ## [1.4.7][] - 2018-04-07
@@ -78,7 +80,8 @@ Denormalized data further to allow more interesting queries for months/days/week
 * **BASIC** commander commmand line argument parsing
 
 
-[Unreleased]: https://github.com/one19/im-doin/compare/v1.4.7...HEAD
+[Unreleased]: https://github.com/one19/im-doin/compare/v1.5.0...HEAD
+[1.5.0]: https://github.com/one19/im-doin/compare/v1.4.7...v1.5.0
 [1.4.7]: https://github.com/one19/im-doin/compare/v1.4.6...v1.4.7
 [1.4.6]: https://github.com/one19/im-doin/compare/v1.4.5...v1.4.6
 [1.4.5]: https://github.com/one19/im-doin/compare/v1.4.4...v1.4.5
