@@ -1,5 +1,7 @@
 # IMDOIN
 
+[![Maintenance status](https://raw.githubusercontent.com/one19/project-status/master/cache/im-doin/maintained.svg?sanitize=true)](https://github.com/one19/project-status) [![published on npm!](https://raw.githubusercontent.com/one19/project-status/master/cache/im-doin/npm.svg?sanitize=true)](https://www.npmjs.com/package/im-doin) [![Very unstable code](https://raw.githubusercontent.com/one19/project-status/master/cache/im-doin/maintenance.svg?sanitize=true)](https://github.com/one19/project-status)
+---
 #WHY:
 
 You're a clever dev. You know your way around all the new fanciest frameworks,
