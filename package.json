@@ -7,7 +7,7 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "lint": "eslint --fix .",
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "snyk test && echo \"Error: no test specified\" && exit 0",
     "precommit": "lint-staged",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
@@ -54,6 +54,7 @@
     "mocha": "^3.5.3",
     "nock": "^9.0.20",
     "prettier": "^1.7.0",
-    "version-changelog": "^2.1.0"
+    "version-changelog": "^2.1.0",
+    "snyk": "^1.80.1"
   }
 }

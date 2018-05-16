@@ -1,6 +1,7 @@
 # IMDOIN
 
-[![Maintenance status](https://raw.githubusercontent.com/one19/project-status/master/cache/im-doin/maintained.svg?sanitize=true)](https://github.com/one19/project-status) [![published on npm!](https://raw.githubusercontent.com/one19/project-status/master/cache/im-doin/npm.svg?sanitize=true)](https://www.npmjs.com/package/im-doin) [![Very unstable code](https://raw.githubusercontent.com/one19/project-status/master/cache/im-doin/maintenance.svg?sanitize=true)](https://github.com/one19/project-status)
+[![Maintenance status](https://raw.githubusercontent.com/one19/project-status/master/cache/im-doin/maintained.svg?sanitize=true)](https://github.com/one19/project-status) [![published on npm!](https://raw.githubusercontent.com/one19/project-status/master/cache/im-doin/npm.svg?sanitize=true)](https://www.npmjs.com/package/im-doin) [![Very unstable code](https://raw.githubusercontent.com/one19/project-status/master/cache/im-doin/maintenance.svg?sanitize=true)](https://github.com/one19/project-status) [![Known Vulnerabilities](https://snyk.io/test/github/one19/im-doin/badge.svg)](https://snyk.io/test/github/one19/im-doin)
+
 ---
 #WHY:
 
